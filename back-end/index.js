@@ -6,12 +6,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 const apiReportRoutes = require("./api/report.js");
-
+const observationRoutes = require("./api/observation.js");
 
 app.use(bodyParser.json());
 app.use(cors());
 
+
 app.use("/api", apiReportRoutes);
+app.use("/api", observationRoutes);
 
 app.get("/", function (req, res) {
     res.send('health check');
