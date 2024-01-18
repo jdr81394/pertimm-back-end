@@ -37,8 +37,6 @@ router.post('/reports', (req, res) => {
 
     // Check to make sure email was not already used before
     // I can use a map to make this a faster access, but requested type was a "tableau"/array
-
-   
     const {email} = req.body.author;
 
     if(emails.find(({email : e}) => e.trim() === email.trim()) === undefined) {
@@ -156,8 +154,6 @@ router.delete("/reports/:id", (req,res) => {
     }
 
     // delete out of the email
-
-
     const index = reports.findIndex((obj) => obj.id == targetId);
 
     if(index === -1) {
