@@ -143,8 +143,6 @@ router.patch("/reports", (req,res) => {
 
 router.delete("/reports/:id", (req,res) => {
     const targetId = req.params.id * 1;
-
-    console.log(targetId);
     
 
     if(typeof targetId !== "number" ){
